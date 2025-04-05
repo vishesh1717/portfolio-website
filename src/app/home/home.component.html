@@ -1,0 +1,438 @@
+<header>
+  <a href="/" class="logo"
+    ><img class="logo-img" src="../../assets/images/logo1.png" alt=""
+  /></a>
+
+  <div
+    id="menu"
+    class="fas fa-bars"
+    [ngClass]="{ 'fa-bars': !menuOpen, 'fa-times': menuOpen }"
+    (click)="toggleMenu()"
+  ></div>
+  <nav class="navbar" [ngClass]="{ 'nav-toggle': menuOpen }">
+    <ul>
+      <div class="color-theme" (click)="toggleTheme()">
+        <span *ngIf="isLight">🌙</span>
+        <span *ngIf="!isLight">☀️</span>
+      </div>
+      <li>
+        <a
+          [ngClass]="{ active: activeSection === 'home' }"
+          (click)="scrollTo('home')"
+          >Home</a
+        >
+      </li>
+      <li>
+        <a
+          [ngClass]="{ active: activeSection === 'about' }"
+          (click)="scrollTo('about')"
+          >About</a
+        >
+      </li>
+      <li>
+        <a
+          [ngClass]="{ active: activeSection === 'skills' }"
+          (click)="scrollTo('skills')"
+          >Skills</a
+        >
+      </li>
+      <li>
+        <a
+          [ngClass]="{ active: activeSection === 'work' }"
+          (click)="scrollTo('work')"
+          >Work</a
+        >
+      </li>
+      <li>
+        <a
+          [ngClass]="{ active: activeSection === 'experience' }"
+          (click)="scrollTo('experience')"
+          >Experience</a
+        >
+      </li>
+      <li>
+        <a
+          [ngClass]="{ active: activeSection === 'education' }"
+          (click)="scrollTo('education')"
+          >Education</a
+        >
+      </li>
+      <li>
+        <a
+          [ngClass]="{ active: activeSection === 'contact' }"
+          (click)="scrollTo('contact')"
+          >Contact</a
+        >
+      </li>
+    </ul>
+  </nav>
+</header>
+
+<section class="home" id="home">
+  <div id="tsparticles" class="particles-container tsparticles"></div>
+
+  <div class="content">
+    <h2>
+      Hi There,<br />
+      I'm <span>Vishesh Hasoriya</span>
+    </h2>
+    <p>i am into <span class="typing-text"></span></p>
+    <a href="#about" class="btn"
+      ><span>About Me</span>
+      <i class="fas fa-arrow-circle-down"></i>
+    </a>
+    <div class="socials">
+      <ul class="social-icons">
+        <li>
+          <a
+            class="linkedin"
+            aria-label="LinkedIn"
+            href="https://www.linkedin.com/in/vishesh-hasoriya-4b68bb1b1/"
+            target="_blank"
+            ><i class="fab fa-linkedin"></i
+          ></a>
+        </li>
+        <li>
+          <a
+            class="github"
+            aria-label="GitHub"
+            href="https://github.com/vishesh1717"
+            target="_blank"
+            ><i class="fab fa-github"></i
+          ></a>
+        </li>
+        <li>
+          <a
+            class="twitter"
+            aria-label="Twitter"
+            href="https://twitter.com/"
+            target="_blank"
+            ><i class="fab fa-twitter"></i
+          ></a>
+        </li>
+
+        <li>
+          <a
+            class="instagram"
+            aria-label="Instagram"
+            href="https://www.instagram.com/vishesh_hasoriya/"
+            ><i class="fab fa-instagram" target="_blank"></i
+          ></a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div class="image">
+    <img
+      draggable="false"
+      class="tilt"
+      src="../../assets/images/hero.png"
+      alt=""
+    />
+  </div>
+</section>
+
+<section class="about" id="about">
+  <h2 class="heading"><i class="fas fa-user-alt"></i> About <span>Me</span></h2>
+
+  <div class="row">
+    <div class="image">
+      <img
+        draggable="false"
+        class="tilt"
+        src="./assets/images/dp2.jpg"
+        alt=""
+      />
+    </div>
+    <div class="content">
+      <h3>I'm Vishesh</h3>
+      <span class="tag"
+        >Front Angular Developer | Web Developer | MEAN Stack Developer</span
+      >
+
+      <p>
+        Angular Developer with 3+ years of experience in designing and
+        developing single-page applications(SPA) using Angular, TypeScript, and
+        JavaScript. Proficient in building reusable components, integrating REST
+        APIs, and optimizing performance with RxJS and lazy loading. Hands-on
+        experience with CI/CD pipelines, Git, Agile methodologies, and basic
+        cloud knowledge (AWS). Skilled in debugging, cross-browser
+        compatibility, and creating secure, maintainable, and responsive
+        frontend solutions.
+      </p>
+      <div class="about-resume-container">
+        <div class="box-container">
+          <!-- <div class="box">
+              <p><span> age: </span> 20</p>
+              <p><span> phone : </span> +91 XXX-XXX-XXXX</p>
+            </div> -->
+          <div class="box">
+            <p><span> email : </span> visheshh16&#64;gmail.com</p>
+            <p><span> mobile : </span> 91+ 7972530167</p>
+            <p><span> place : </span> Pune, India - 411057</p>
+          </div>
+        </div>
+
+        <div class="resumebtn">
+          <a
+            href="https://drive.google.com/file/d/1bUExa4qS9D5ELWuVIIUDvLVbLivX1dk1/view?usp=drive_link"
+            target="_blank"
+            class="btn"
+            ><span>Resume</span>
+            <i class="fas fa-chevron-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="skills" id="skills">
+  <h2 class="heading">
+    <i class="fas fa-laptop-code"></i> Skills & <span>Abilities</span>
+  </h2>
+
+  <div class="container">
+    <div class="row" id="skillsContainer">
+      <ng-container *ngFor="let skill of skills">
+        <div class="info">
+          <img src="{{ skill.icon }}" alt="skill" />
+          <div>{{ skill.name }}</div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</section>
+
+<section class="work" id="work">
+  <h2 class="heading">
+    <i class="fas fa-laptop-code"></i> Projects <span>Made</span>
+  </h2>
+
+  <div class="box-container">
+    <ng-container *ngFor="let project of projects">
+      <div class="box tilt">
+        <img
+          draggable="false"
+          src="../../assets/images/projects/{{ project.image }}.jpg"
+          alt="project"
+        />
+        <div class="content">
+          <div class="tag">
+            <h3>{{ project.name }}</h3>
+          </div>
+          <div class="desc">
+            <p>{{ project.desc }}</p>
+            <div class="btns">
+              <a href="${project.links.view}" class="btn" target="_blank"
+                ><i class="fas fa-eye"></i> View</a
+              >
+              <a href="${project.links.code}" class="btn" target="_blank"
+                >Code <i class="fas fa-code"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </ng-container>
+  </div>
+</section>
+
+<section class="experience" id="experience">
+  <h2 class="heading"><i class="fas fa-briefcase"></i> Experience</h2>
+
+  <div class="timeline">
+    <div class="container right">
+      <div class="content">
+        <div class="tag">
+          <h2>Cognizant Technology Solutions</h2>
+        </div>
+        <div class="desc">
+          <h3>Frontend Developer</h3>
+          <p>Aug 2022 - present</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container left">
+      <div class="content">
+        <div class="tag">
+          <h2>Cognizant Technology Solutions</h2>
+        </div>
+        <div class="desc">
+          <h3>MEAN Stack Developer | Internship</h3>
+          <p>Jan 2022 - July 2022</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container right">
+      <div class="content">
+        <div class="tag">
+          <h2>G.H Raisoni College of Engineering</h2>
+        </div>
+        <div class="desc">
+          <h3>B.E in Computer Science and Engineering</h3>
+          <p>May 2018 - June 2022</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="container left">
+      <div class="content">
+        <div class="tag">
+          <h2>Rai English High School</h2>
+        </div>
+        <div class="desc">
+          <h3>Higher Secondary School (12th)</h3>
+          <p>June 2016 - May 2018</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- education section starts -->
+<section class="education" id="education">
+  <h1 class="heading">
+    <i class="fas fa-graduation-cap"></i> My <span>Education</span>
+  </h1>
+
+  <p class="qoute">
+    Education is not the learning of facts, but the training of the mind to
+    think.
+  </p>
+
+  <div class="box-container">
+    <div class="box">
+      <div class="image">
+        <img draggable="false" src="./assets/images/college-img.png" alt="" />
+      </div>
+      <div class="content">
+        <h3>Bachelor of Engineering in Computer Science and Engineering</h3>
+        <p>G.H Raisoni College Of Enginnering</p>
+        <h4>2018-2022</h4>
+      </div>
+    </div>
+
+    <div class="box">
+      <div class="image">
+        <img draggable="false" src="./assets/images/school-img.jpeg" alt="" />
+      </div>
+      <div class="content">
+        <h3>HSC Science</h3>
+        <p>Rai English High School</p>
+        <h4>2018-2020</h4>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- education section ends -->
+
+<section class="contact" id="contact">
+  <h2 class="heading">
+    <i class="fas fa-headset"></i> Get in <span>Touch</span>
+  </h2>
+
+  <div class="container">
+    <div class="content">
+      <div class="image-box">
+        <img draggable="false" src="./assets/images/contact1.png" alt="" />
+      </div>
+      <form
+        #contactForm="ngForm"
+        (ngSubmit)="onSubmit(contactForm)"
+        id="contact-form"
+      >
+        <div class="form-group">
+          <div class="field">
+            <input
+              type="text"
+              name="name"
+              ngModel
+              required
+              placeholder="Your Name"
+            />
+            <i class="fas fa-user"></i>
+          </div>
+          <div class="field">
+            <input
+              type="email"
+              name="email"
+              ngModel
+              required
+              placeholder="Your Email"
+            />
+            <i class="fas fa-envelope"></i>
+          </div>
+          <div class="field">
+            <input
+              type="tel"
+              name="phone"
+              ngModel
+              required
+              placeholder="Your Phone"
+            />
+            <i class="fas fa-phone-alt"></i>
+          </div>
+          <div class="message">
+            <textarea
+              name="message"
+              ngModel
+              required
+              placeholder="Your Message"
+            ></textarea>
+            <i class="fas fa-comment-dots"></i>
+          </div>
+        </div>
+        <div class="button-area">
+          <button type="submit">
+            Submit <i class="fa fa-paper-plane"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+<!-- contact section ends -->
+
+<!-- footer section starts -->
+<section class="footer">
+  <div class="box-container">
+    <div class="box">
+      <h3>Vishesh's Portfolio</h3>
+      <p>
+        Thank you for visiting my personal portfolio website. Connect with me
+        over socials. <br />
+        <br />
+        Site built using Angular 17+.
+      </p>
+    </div>
+
+    <div class="box">
+      <h3>quick links</h3>
+      <a href="#home"><i class="fas fa-chevron-circle-right"></i> home</a>
+      <a href="#about"><i class="fas fa-chevron-circle-right"></i> about</a>
+      <a href="#skills"><i class="fas fa-chevron-circle-right"></i> skills</a>
+      <a href="#education"
+        ><i class="fas fa-chevron-circle-right"></i> education</a
+      >
+      <a href="#work"><i class="fas fa-chevron-circle-right"></i> work</a>
+      <a href="#experience"
+        ><i class="fas fa-chevron-circle-right"></i> experience</a
+      >
+    </div>
+
+    <div class="box">
+      <h3>contact info</h3>
+      <p><i class="fas fa-phone"></i>+91 7972530167</p>
+      <p><i class="fas fa-envelope"></i>Vishesh</p>
+      <p><i class="fas fa-map-marked-alt"></i>Pune, India-411507</p>
+    </div>
+  </div>
+
+  <!-- <h1 class="credit">
+    Designed with <i class="fa fa-heart pulse"></i> by
+    <a href="https://www.linkedin.com/in/jigar-sable"> jigar sable</a>
+  </h1> -->
+</section>
+<!-- footer section ends -->
