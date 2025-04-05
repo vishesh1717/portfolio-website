@@ -104,6 +104,10 @@ section {
   //min-height: 100vh;
   border-bottom: 1px solid var(--text-color);
   padding: 7rem 10rem;
+  @media (min-width:450px) and (max-width:850px) {
+    padding-left:3rem ;
+    padding-right:3rem ;
+  }
 }
 .heading {
   font-size: 3.5rem;
@@ -537,7 +541,10 @@ nav a.active {
 .skills .container .row {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
-  @media (min-width: 450px) and (max-width: 1024px) {
+  @media (min-width: 300px) and (max-width: 730px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 730px) and (max-width: 1024px) {
     grid-template-columns: repeat(4, 1fr);
   }
   flex-wrap: wrap;
@@ -851,11 +858,18 @@ nav a.active {
   margin-left: -3px;
   z-index: 2;
   height: 42rem; 
-  @media (min-width: 821px) and (max-width: 1035px) {
+  @media (min-width: 750px) and (max-width: 1035px) {
     height: 50rem;
   }
-  @media (min-width: 600px) and (max-width: 750px) {
-    height: 77rem;
+  
+  @media (min-width: 601px) and (max-width: 750px) {
+    height: 55rem;
+  }
+  @media (min-width: 450px) and (max-width: 500px) {
+    height: 50rem;
+  }
+  @media (min-width: 450px) and (max-width: 500px) {
+    height: 50rem;
   }
 }
 .experience .container {
@@ -988,7 +1002,7 @@ nav a.active {
   }
   .experience .timeline::after {
     left: 31px;
-    height: 54rem;
+    //height: 54rem;
   }
   .experience .container {
     width: 100%;
@@ -1277,9 +1291,9 @@ form .button-area {
     .home .image img{
         width: 30%;
     }
-    .skills .container .row{
-        grid-template-columns: repeat(4, 1fr);
-    }
+    // .skills .container .row{
+    //     grid-template-columns: repeat(4, 1fr);
+    // }
 }
 @media (max-width: 450px) {
   .footer .box-container .box {
