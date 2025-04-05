@@ -131,6 +131,7 @@ header .navbar ul {
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 header .navbar li {
   margin-left: 2.5rem;
@@ -478,9 +479,7 @@ nav a.active {
   font-size: 1.2rem;
   transition: 0.3s;
 }
-.resumebtn .btn:hover {
-//   background: #1a047e;
-}
+
 .resumebtn .btn:hover i {
   transform: translateX(5px);
 }
