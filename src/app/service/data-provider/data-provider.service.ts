@@ -79,44 +79,44 @@ export class DataProviderService {
   ];
   projects = [
     {
-      name: 'Pharmacy Management App',
+      name: 'Hospital Management App',
       desc: 'Fully fledged WebApp based on different design patterns. Built using Angular,ExpressJs,MongoDB,NodeJs.',
+      image: 'HospitalSystem3',
+      category: 'web',
+      links: {
+        view: '',
+        code: 'https://github.com/vishesh1717/Hospital-Management-System',
+      },
+    },
+    {
+      name: 'Task Manager App',
+      desc: 'A Mean stack built for learning purpose ,implemented CRUD operation and angular advance concepts',
+      image: 'TaskManager',
+      category: 'web',
+      links: {
+        view: '',
+        code: 'https://github.com/vishesh1717/Task-Manager',
+      },
+    },
+    {
+      name: 'Big Basket Clone',
+      desc: 'A Angular stack built for learning purpose ,implemented basic and advance concepts of Angular.',
       image: 'project1',
       category: 'web',
       links: {
         view: '',
-        code: '',
+        code: 'https://github.com/vishesh1717/Big-Basket-Clone',
       },
     },
-    {
-      name: 'Employee Management App',
-      desc: 'A Mean stack built for learning purpose ,implemented CRUD operation and angular advance concepts',
-      image: 'project2',
-      category: 'android',
-      links: {
-        view: '',
-        code: '',
-      },
-    },
-    {
-      name: 'Demo App',
-      desc: 'A Mean stack built for learning purpose ,implemented CRUD operation and angular advance concepts',
-      image: 'project2',
-      category: 'android',
-      links: {
-        view: '',
-        code: '',
-      },
-    },
-    {
-      name: 'Demo  App',
-      desc: 'A Mean stack built for learning purpose ,implemented CRUD operation and angular advance concepts',
-      image: 'weatherlyandroid',
-      category: 'android',
-      links: {
-        view: '',
-        code: '',
-      },
-    },
+    // {
+    //   name: 'Demo  App',
+    //   desc: 'Working on th',
+    //   image: 'project1',
+    //   category: 'android',
+    //   links: {
+    //     view: '',
+    //     code: '',
+    //   },
+    // },
   ];
 }
