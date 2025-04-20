@@ -145,13 +145,14 @@
       />
     </div>
     <div class="content">
-      <h3>I'm Vishesh</h3>
+      <!-- <h3>I'm Vishesh</h3> -->
       <span class="tag"
-        >Front Angular Developer | Web Developer | MEAN Stack Developer</span
+        >Frontend Developer | React Developer | Angular Developer | Full Stack
+        Developer</span
       >
 
       <p>
-        Angular Developer with 3+ years of experience in designing and
+        Frontend Developer with 3+ years of experience in designing and
         developing single-page applications(SPA) using Angular, TypeScript, and
         JavaScript. Proficient in building reusable components, integrating REST
         APIs, and optimizing performance with RxJS and lazy loading. Hands-on
@@ -208,34 +209,92 @@
   <h2 class="heading">
     <i class="fas fa-laptop-code"></i> Projects <span>Made</span>
   </h2>
-
-  <div class="box-container">
-    <ng-container *ngFor="let project of projects">
-      <div class="box tilt">
-        <img
-          draggable="false"
-          src="../../assets/images/projects/{{ project.image }}.jpg"
-          alt="project"
-        />
-        <div class="content">
-          <div class="tag">
-            <h3>{{ project.name }}</h3>
-          </div>
-          <div class="desc">
-            <p>{{ project.desc }}</p>
-            <div class="btns">
-              <a href="{{ project.links.code }}" class="btn" target="_blank"
-                ><i class="fas fa-eye"></i> View</a
-              >
-              <a href="{{ project.links.code }}" class="btn" target="_blank"
-                >Code <i class="fas fa-code"></i
-              ></a>
+  <div class="project-button-container">
+    <button
+      class="react-button"
+      [ngClass]="{ activeWorkButton: activeReact }"
+      (click)="projectButton('react')"
+    >
+      React
+    </button>
+    <button
+      class="angular-button"
+      (click)="projectButton('angular')"
+      [ngClass]="{ activeWorkButton: activeAngular }"
+    >
+      Angular
+    </button>
+  </div>
+  <ng-container *ngIf="activeReact; else angularSkills">
+    <div class="box-container">
+      <ng-container *ngFor="let project of reactProjects">
+        <div class="box tilt">
+          <img
+            draggable="false"
+            src="../../assets/images/projects/{{ project.image }}.jpg"
+            alt="project"
+          />
+          <div class="content">
+            <div class="tag">
+              <h3>{{ project.name }}</h3>
+            </div>
+            <div class="desc">
+              <p>{{ project.desc }}</p>
+              <div class="btns">
+                <a
+                  href="{{ project.links.view }}"
+                  class="btn"
+                  target="_blank"
+                  *ngIf="project.links.view"
+                  ><i class="fas fa-eye"></i> View</a
+                >
+                <a
+                  href="{{ project.links.code }}"
+                  class="btn"
+                  target="_blank"
+                  *ngIf="project.links.code"
+                  >Code <i class="fas fa-code"></i
+                ></a>
+              </div>
             </div>
           </div>
         </div>
-      </div>
-    </ng-container>
-  </div>
+      </ng-container>
+    </div>
+  </ng-container>
+  <ng-template #angularSkills>
+    <div class="box-container">
+      <ng-container *ngFor="let project of angularProjects">
+        <div class="box tilt">
+          <img
+            draggable="false"
+            src="../../assets/images/projects/{{ project.image }}.jpg"
+            alt="project"
+          />
+          <div class="content">
+            <div class="tag">
+              <h3>{{ project.name }}</h3>
+            </div>
+            <div class="desc">
+              <p>{{ project.desc }}</p>
+              <div class="btns">
+                <a
+                  href="{{ project.links.view }}"
+                  class="btn"
+                  target="_blank"
+                  *ngIf="project.links.view"
+                  ><i class="fas fa-eye"></i> View</a
+                >
+                <a href="{{ project.links.code }}" class="btn" target="_blank"
+                  >Code <i class="fas fa-code"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </ng-template>
 </section>
 
 <section class="experience" id="experience">

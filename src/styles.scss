@@ -410,6 +410,7 @@ nav a.active {
 }
 .about .row .image img {
   margin: 4rem;
+  margin-bottom: 0;
   width: 30rem;
   height: auto;
   border-radius: 5%;
@@ -717,6 +718,32 @@ nav a.active {
   /* background: #010124; */
   background: var(--bg-main-color)
 }
+.work .project-button-container{
+  display: flex;
+  justify-content: center;
+  padding: 20px 0;
+
+}
+.work .project-button-container button{
+  width: 120px;
+  height: 40px;
+  text-align: center;
+  color: var(--work-text-color);
+  background-color: #cdcdcd;
+    font-size: 1.6rem;
+}
+.work .project-button-container .react-button{
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+  border-right: 1px solid var(--text-color);
+}
+.work .project-button-container .angular-button{
+  border-top-right-radius: 6px;
+  border-bottom-right-radius: 6px;
+}
+.work .project-button-container .activeWorkButton{
+  background-color: var(--main-color);
+}
 .work h2 {
   color: var(--text-color);
   padding: 1rem;
@@ -769,6 +796,7 @@ nav a.active {
 }
 .work .box-container .box:hover .content {
   top: 25%;
+  text-transform: none;
 }
 .work .desc {
   margin: 2rem;
@@ -777,7 +805,7 @@ nav a.active {
   justify-content: center;
 }
 .work .desc p {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 .work .desc .btns {
   display: flex;

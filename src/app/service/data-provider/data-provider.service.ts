@@ -11,6 +11,10 @@ export class DataProviderService {
     //   icon: 'https://img.icons8.com/external-tal-revivo-color-tal-revivo/48/000000/external-react-a-javascript-library-for-building-user-interfaces-logo-color-tal-revivo.png',
     // },
     {
+      name: 'React',
+      icon: 'https://img.icons8.com/color/48/react-native.png',
+    },
+    {
       name: 'Angular',
       icon: 'https://img.icons8.com/?size=100&id=71257&format=png&color=000000',
     },
@@ -77,14 +81,13 @@ export class DataProviderService {
       icon: 'https://img.icons8.com/glyph-neue/48/ffffff/github.png',
     },
   ];
-  projects = [
+  angularProjects = [
     {
       name: 'Hospital Management App',
       desc: 'Fully fledged WebApp based on different design patterns. Built using Angular,ExpressJs,MongoDB,NodeJs.',
       image: 'HospitalSystem3',
       category: 'web',
       links: {
-        view: '',
         code: 'https://github.com/vishesh1717/Hospital-Management-System',
       },
     },
@@ -94,7 +97,6 @@ export class DataProviderService {
       image: 'TaskManager',
       category: 'web',
       links: {
-        view: '',
         code: 'https://github.com/vishesh1717/Task-Manager',
       },
     },
@@ -104,7 +106,6 @@ export class DataProviderService {
       image: 'project1',
       category: 'web',
       links: {
-        view: '',
         code: 'https://github.com/vishesh1717/Big-Basket-Clone',
       },
     },
@@ -118,5 +119,37 @@ export class DataProviderService {
     //     code: '',
     //   },
     // },
+  ];
+  reactProjects = [
+    {
+      name: 'Shopper - Ecommerce Store',
+      desc: 'A full-stack online shopping application built using React and Node.js with Express. The app allows users to browse products, add items to a cart, and securely checkout.',
+      image: 'ecommerce-online1',
+      category: 'web',
+      links: {
+        code: 'https://github.com/vishesh1717/Shopper-new',
+        view: 'https://shopper-new.onrender.com',
+      },
+    },
+    {
+      name: 'Hotel Booking System',
+      desc: 'Currently building a hotel booking platform using React, MongoDB, Express.js and Node.js. The system will allow users to search for hotels, view room availability, make bookings, and manage their reservations. It will include user authentication, admin hotel management, and a responsive UI.',
+      image: 'hotel-managment',
+      category: 'web',
+      links: {
+        code: '',
+        view: '',
+      },
+    },
+    {
+      name: 'Real Estate System',
+      desc: 'Working Developing a full-featured real estate platform using MongoDB, Express.js, React, and Node.js. The application will enable users to browse property listings, filter by location and price, view property details, and contact sellers or agents. Admins will have tools to manage listings and users.',
+      image: 'real-estate',
+      category: 'web',
+      links: {
+        code: '',
+        view: '',
+      },
+    },
   ];
 }

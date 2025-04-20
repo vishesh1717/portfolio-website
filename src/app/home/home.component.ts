@@ -28,6 +28,22 @@ export class HomeComponent implements OnInit {
         links: { view: string; code: string };
       }[]
     | undefined;
+  activeReact: boolean = true;
+  activeAngular: boolean = false;
+  angularProjects: {
+    name: string;
+    desc: string;
+    image: string;
+    category: string;
+    links: { code: string; view?: string };
+  }[] = [];
+  reactProjects: {
+    name: string;
+    desc: string;
+    image: string;
+    category: string;
+    links: { code: string; view: string };
+  }[] = [];
   constructor(
     private renderer: Renderer2,
     private dataProviderService: DataProviderService
@@ -74,7 +90,15 @@ export class HomeComponent implements OnInit {
       }
     }
   }
-
+  projectButton(type: string) {
+    if (type === 'react') {
+      this.activeReact = true;
+      this.activeAngular = false;
+    } else {
+      this.activeReact = false;
+      this.activeAngular = true;
+    }
+  }
   scrollTo(sectionId: string) {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -168,7 +192,9 @@ export class HomeComponent implements OnInit {
 
   ngOnInit() {
     this.skills = this.dataProviderService.skills;
-    this.projects = this.dataProviderService.projects;
+    this.angularProjects = this.dataProviderService.angularProjects;
+
+    this.reactProjects = this.dataProviderService.reactProjects;
   }
   menuOpen = false;
 
